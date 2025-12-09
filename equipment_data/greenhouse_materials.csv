@@ -1,0 +1,6 @@
+Material_Code,Material_Type,Thermic,Light_Property,Light_Transmittance_Rate,Diffuse_Transmittance_Rate,IR_Transmittance_Rate,IR_Blocking_Rate,Haze_Level,GH_Light_Penetration_Pct,Relative_Yield_Pct
+PTO2A,EVA,Yes,Diffuse,0.825,0.7099,0.20,0.77,High,65,98
+PTO2C,EVA,Yes,Clear,0.9064,0.8092,0.3905,0.58,Low,71,105
+PHO3A,PE,No,Diffuse,0.893,0.765,0.37,0.60,High,70,104
+PKO2E,PE,No,Clear,0.89,0.80,0.54,0.43,Low,70,107
+Glass,Glass,Yes,Clear,0.90,0.83,0.00,0.80,Low,72,100

@@ -1,0 +1,21 @@
+Category,Type,Model,Description,Diameter_Inch,Airflow_CMH,Throw_Distance_m,Power_W,Voltage_V,Price_NTD,Dimensions_LxWxH_cm
+Exhaust,Cone_Fan,E57C3S,Super High Flow Cone Fan,57,70000,N/A,2466,220/3ph,110800,175x175x155
+Exhaust,Cone_Fan,E50C6P,Standard Cone Fan,50,55000,N/A,1379,220/3ph,100800,146x146x100.5
+Exhaust,Box_Fan,D54L7F,High Eff DC 7-Blade,54,49000,N/A,783,220/1ph,31800,148x148x43
+Exhaust,Box_Fan,D54P3F,Standard DC 3-Blade,54,44000,N/A,884,220/1ph,26800,146x146x58
+Exhaust,Box_Fan,S54P3F,Servo Motor Fan,54,36000,N/A,727,220/3ph,30800,146x146x58
+Exhaust,Box_Fan,E36K7P,High Pressure Fan,36,36000,N/A,2699,220/3ph,84800,113x113x44
+Exhaust,Box_Fan,D46P7F,Mid-Size DC Fan,46,32000,N/A,582,220/1ph,25800,126x126x55
+Exhaust,Box_Fan,D42L7F,Compact DC Fan,42,30000,N/A,498,220/1ph,26800,107x107x43
+Exhaust,Box_Fan,E28K7P,Small High Pressure,28,22000,N/A,1680,220/3ph,70800,95x95x44
+Exhaust,Box_Fan,E24K7P,Small High Pressure,24,16000,N/A,1133,220/3ph,64800,82x82x40
+Exhaust,Box_Fan,A32P3F,Small AC Fan,32,11000,N/A,302,220/1ph,12800,83x83x48
+Exhaust,Roof_Fan,D42T7F,Roof Exhaust DC,42,30000,N/A,498,220/1ph,29800,150x118x91
+Circulation,Horizontal_Fan,D40G7P,Large DC Circulation Fan,40,N/A,40-50,625,220/1ph,24800,101x101x45
+Circulation,Horizontal_Fan,D54B3F,Extra Large Simple Fan,54,N/A,25-30,900,220/1ph,25800,136x136x43
+Circulation,Horizontal_Fan,A24G3P,Standard Circulation Fan,24,N/A,20-30,346,110/1ph,9200,74x74x31.5
+Circulation,Horizontal_Fan,A22J3P,Booster Fan (Long Dist),22,N/A,25-30,430,220/1ph,7600,57x57x35
+Circulation,Horizontal_Fan,A18J3P,Booster Fan (Mid Dist),18,N/A,15-20,260,220/1ph,4100,48x48x30
+Circulation,Horizontal_Fan,A16S4X,Small Force Fan,16,N/A,10-15,220,220/1ph,3600,40x40x30
+Circulation,Horizontal_Fan,D24-FAN,Strong Fan (No Price),24,N/A,20-25,638,220/1ph,N/A,75x30.5x75
+Circulation,Horizontal_Fan,M901-PA,Compact Fan (No Price),18,N/A,10-15,308,220/1ph,N/A,50x41(Dia_Depth)
