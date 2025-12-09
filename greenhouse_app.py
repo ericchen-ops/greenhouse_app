@@ -6,7 +6,7 @@ import plotly.express as px
 from plotly.subplots import make_subplots
 import math
 import os
-
+from streamlit_gsheets import GSheetsConnection
 # --- 設定頁面配置 ---
 st.set_page_config(
     page_title="溫室環境決策系統 V6.0 (Python版)",
@@ -65,6 +65,7 @@ def scan_and_load_weather_data(base_folder='weather_data'):
                 elif '濕度' in c or 'RH' in c: col_map['rh'] = c
                 elif '風速' in c or 'Wind' in c: col_map['wind'] = c
                 elif '日射' in c or 'Solar' in c: col_map['solar'] = c
+    
 
             if 'time' not in col_map: continue 
 
@@ -434,6 +435,36 @@ def run_simulation(target_gh_specs, target_fan_specs, target_climate, monthly_cr
         'data': data, 'totalYield': total_yield, 'totalRevenue': total_revenue,
         'floorArea': floor_area, 'volume': volume, 'maxSummerTemp': max_summer_temp
     }
+
+# ... (上面是你原本的 scan_and_load_weather_data 函式，不要動它) ...
+
+# ==========================================
+# 2. Google Sheets 資料庫連線 (新增在這下面)
+# ==========================================
+def load_google_sheet_db():
+    """連線到 Google Sheets 讀取紀錄"""
+    try:
+        # 建立連線
+        conn = st.connection("gsheets", type=GSheetsConnection)
+        # 讀取資料 (假設你的工作表名稱叫做 'log_data'，若沒指定則讀第一張)
+        df_db = conn.read(worksheet="工作表1") 
+        return conn, df_db
+    except Exception as e:
+        st.error(f"無法連線到資料庫: {e}")
+        return None, None
+
+# ==========================================
+# 3. 主程式邏輯 (Main App)
+# ==========================================
+# 載入氣象資料 (原本的功能)
+weather_dict = scan_and_load_weather_data()
+
+# 載入資料庫 (新的功能)
+conn, df_db = load_google_sheet_db()
+
+if df_db is not None:
+    st.success("✅ 資料庫連線成功！")
+    # 這裡可以開始寫你的 st.dataframe(df_db) 或 st.form...
 
 # ==========================================
 # 4. Streamlit UI 邏輯
@@ -1051,4 +1082,5 @@ with tab4:
         else: c_res2.info("此範圍內增加投入均為正向收益。")
              
         with st.expander("查看詳細數據表 (含 ROI 分析)"):
+
             st.dataframe(df_m[['變數值', '年產量 (kg)', '總成本 ($)', '淨利 ($)', '邊際效益(ROI)']].style.format("{:,.0f}"), use_container_width=True)
