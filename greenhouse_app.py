@@ -437,20 +437,6 @@ def run_simulation(target_gh_specs, target_fan_specs, target_climate, monthly_cr
     }
 
 
-
-# ==========================================
-# 3. 主程式邏輯 (Main App)
-# ==========================================
-# 載入氣象資料 (原本的功能)
-weather_dict = scan_and_load_weather_data()
-
-# 載入資料庫 (新的功能)
-conn, df_db = load_google_sheet_db()
-
-if df_db is not None:
-    st.success("✅ 資料庫連線成功！")
-    # 這裡可以開始寫你的 st.dataframe(df_db) 或 st.form...
-
 # ==========================================
 # 4. Streamlit UI 邏輯
 # ==========================================
@@ -1069,4 +1055,5 @@ with tab4:
         with st.expander("查看詳細數據表 (含 ROI 分析)"):
 
             st.dataframe(df_m[['變數值', '年產量 (kg)', '總成本 ($)', '淨利 ($)', '邊際效益(ROI)']].style.format("{:,.0f}"), use_container_width=True)
+
 
